@@ -1,0 +1,36 @@
+.search {
+    display: flex;
+    margin-left: auto;
+    width: 100%;
+    max-width: 59rem;
+    position: relative;
+
+    &__input {
+        width: 100%;
+        max-width: 59rem;
+        padding: 1.5rem 2.5rem;
+        font-size: 1.4rem;
+        font-weight: 300;
+        color: white;
+        background-color: black;
+        border-radius: 1rem;
+        border: none;
+        outline: none;
+    }
+
+    &__button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 1rem;
+        border-radius: 50%;
+        border: none;
+        width: 4rem;
+        height: 4rem;
+        background-color: rgba(144, 105, 255, 1);
+        color: white;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+}

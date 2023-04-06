@@ -1,0 +1,22 @@
+.header {
+    width: 100%;
+    background-color: rgba(29, 29, 29, 1);
+    display: flex;
+    padding: 5rem;
+    align-items: center;
+
+    &__notification {
+        color: white;
+        margin-left: auto;
+        margin-right: 2.7rem;
+    }
+
+    &__profile {
+        width: 4.8rem;
+        height: 4.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
+}
