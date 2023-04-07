@@ -1,47 +1,67 @@
 .header {
-    width: 100%;
-    background-color: rgba(29, 29, 29, 1);
+  width: 100%;
+  background-color: rgba(29, 29, 29, 1);
+  display: flex;
+  flex-direction: column;
+  padding: 5rem;
+  align-items: center;
+  border-bottom-left-radius: 10rem;
+  border-bottom-right-radius: 10rem;
+
+  &__top {
     display: flex;
-    flex-direction: column;
-    padding: 5rem;
+    width: 100%;
     align-items: center;
-    border-bottom-left-radius: 10rem;
-    border-bottom-right-radius: 10rem;
+    margin-bottom: 4rem;
+  }
 
-    &__top {
-        display: flex;
-        width: 100%;
-        align-items: center;
-        margin-bottom: 4rem;
-    }
+  &__notification {
+    color: white;
+    margin-left: auto;
+    margin-right: 2.7rem;
+  }
 
-    &__notification {
+  &__profile {
+    width: 4.8rem;
+    height: 4.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+
+  &__nav {
+    max-width: 59rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 4rem;
+
+    .nav {
+      color: rgba(137, 137, 137, 1);
+      font-size: 2rem;
+      text-transform: uppercase;
+
+      &-active {
+        position: relative;
+        font-size: 2rem;
+        font-weight: 700;
+        text-transform: uppercase;
         color: white;
-        margin-left: auto;
-        margin-right: 2.7rem;
-    }
 
-    &__profile {
-        width: 4.8rem;
-        height: 4.8rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-    }
+        &::before {
+          position: absolute;
+          display: block;
+          content: "";
+          bottom: -0.5rem;
+          left: 0;
 
-    &__nav {
-        max-width: 59rem;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        margin-left: 4rem;
+          width: 100%;
+          height: 0.5rem;
 
-        .nav {
-            color: rgba(137, 137, 137, 1);
-            font-size: 2rem;
-            text-transform: uppercase;
-
+          background-color: white;
         }
+      }
     }
+  }
 }
