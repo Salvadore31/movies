@@ -2,8 +2,18 @@
     width: 100%;
     background-color: rgba(29, 29, 29, 1);
     display: flex;
+    flex-direction: column;
     padding: 5rem;
     align-items: center;
+    border-bottom-left-radius: 10rem;
+    border-bottom-right-radius: 10rem;
+
+    &__top {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        margin-bottom: 4rem;
+    }
 
     &__notification {
         color: white;
@@ -18,5 +28,20 @@
         align-items: center;
         justify-content: center;
         color: white;
+    }
+
+    &__nav {
+        max-width: 59rem;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-left: 4rem;
+
+        .nav {
+            color: rgba(137, 137, 137, 1);
+            font-size: 2rem;
+            text-transform: uppercase;
+
+        }
     }
 }
