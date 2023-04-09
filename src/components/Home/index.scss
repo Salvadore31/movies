@@ -1,6 +1,111 @@
+@import "~video-react/styles/scss/video-react";
+
 .home {
+  width: 100%;
+  height: fit-content;
+
+  display: flex;
+  justify-content: center;
+
+  &__random-film {
+    display: flex;
+    gap: 4rem;
     width: 100%;
+    max-width: 90rem;
     height: fit-content;
 
-    display: flex;
+    padding: 1rem;
+    box-shadow: 0 0 10px white;
+    border-radius: 3rem;
+
+    .img {
+      width: 100%;
+      max-width: 28rem;
+      height: auto;
+      border-radius: 3rem;
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      gap: 2.3rem;
+      width: 100%;
+
+      span {
+        font-weight: 700;
+        text-decoration: underline;
+      }
+
+      &__title {
+        text-transform: uppercase;
+        text-decoration: underline;
+      }
+
+      &__title,
+      &__year,
+      &__director,
+      &__country,
+      &__rating, 
+      &__description,
+      &__genres {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+        font-size: 2rem;
+        color: white;
+      }
+
+      &__description {
+        display: block;
+
+        button {
+            cursor: pointer;
+            border: none;
+            background-color: transparent;
+            color: white;
+            font-size: 2rem;
+            margin-left: 2rem;
+        }
+      }
+      &__genres {
+        text-transform: capitalize;
+      }
+
+      .icon {
+        width: 5rem;
+        height: 4rem;
+      }
+
+      .kp,
+      .imdb {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      &__buttons {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+        button {
+            cursor: pointer;
+            width: fit-content;
+            height: 4rem;
+            padding: 1rem;
+            text-transform: uppercase;
+
+            color: white;
+            background-color: transparent;
+            border: none;
+        }
+
+        button:first-child(){
+            background-color: orange;
+            font-weight: 700;
+        }
+      }
+    }
+  }
 }

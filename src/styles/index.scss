@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@400;700&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -15,6 +17,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'Jura', sans-serif;
 }
 
 html {
@@ -26,4 +29,9 @@ html {
 a {
     color: black;
     text-decoration: none;
+}
+
+button,
+input {
+    font-family: 'Jura', sans-serif;
 }
