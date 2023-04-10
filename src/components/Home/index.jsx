@@ -1,4 +1,5 @@
 import React from "react";
+import './index.scss';
 import { RandomFilm } from "./components/RandomFilm";
 import { HomeMovies } from "./components/HomeMovies";
 import { HomeSeries } from "./components/HomeSeries";
