@@ -8,7 +8,6 @@ export const RandomFilm = () => {
   const randomFilm = useSelector((state) => state.randomFilm.randomFilm);
   const [film, setFilm] = useState([]);
 
-  console.log(randomFilm);
 
   useEffect(() => {
     setFilm(randomFilm);

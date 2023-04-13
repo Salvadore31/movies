@@ -1,6 +1,5 @@
 import { createAction, createReducer } from "@reduxjs/toolkit"
 
-
 const state = {
     randomFilm: {}
 }

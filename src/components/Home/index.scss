@@ -3,9 +3,10 @@
 .home {
   width: 100%;
   height: fit-content;
-
+  flex-direction: column;
   display: flex;
   justify-content: center;
+  align-items: center;
 
   &__random-film {
     display: flex;
@@ -45,7 +46,7 @@
       &__year,
       &__director,
       &__country,
-      &__rating, 
+      &__rating,
       &__description,
       &__genres {
         display: flex;
@@ -60,14 +61,15 @@
         display: block;
 
         button {
-            cursor: pointer;
-            border: none;
-            background-color: transparent;
-            color: white;
-            font-size: 2rem;
-            margin-left: 2rem;
+          cursor: pointer;
+          border: none;
+          background-color: transparent;
+          color: white;
+          font-size: 2rem;
+          margin-left: 2rem;
         }
       }
+
       &__genres {
         text-transform: capitalize;
       }
@@ -90,21 +92,85 @@
         gap: 2rem;
 
         button {
-            cursor: pointer;
-            width: fit-content;
-            height: 4rem;
-            padding: 1rem;
-            text-transform: uppercase;
+          cursor: pointer;
+          width: fit-content;
+          height: 4rem;
+          padding: 1rem;
+          text-transform: uppercase;
 
-            color: white;
-            background-color: transparent;
-            border: none;
+          color: white;
+          background-color: transparent;
+          border: none;
         }
 
-        button:first-child(){
-            background-color: orange;
-            font-weight: 700;
+        button:first-child() {
+          background-color: orange;
+          font-weight: 700;
         }
+      }
+    }
+  }
+
+  &__movies {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 140rem;
+    height: fit-content;
+    padding: 4rem 4rem;
+    justify-content: space-between;
+
+    .movies {
+      color: white;
+    }
+  }
+
+  &__subtitle {
+    font-weight: bold;
+    font-size: 7rem;
+    color: white;
+    margin-bottom: 4rem;
+  }
+
+  &__button {
+    font-size: 1.8rem;
+    padding: 1rem;
+    margin-top: 5rem;
+    width: 15rem;
+    border-radius: 1.5rem;
+    border: none;
+    background: rgba(124, 124, 124, 0.514);
+    cursor: pointer;
+  }
+
+  &__button:hover {
+    border: 1px solid rgba(192, 192, 192, 0.595);
+    box-shadow: 0 0 10px white;
+  }
+
+  &__link {
+    color: white;
+  }
+
+  .recomendation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem 8rem;
+    width: 100%;
+
+
+    &__movie {
+      display: flex;
+
+      .img {
+        width: 20rem;
+        border-radius: 3rem;
+        transition: transform 500ms ease;
+        cursor: pointer;
+      }
+
+      .img:hover {
+        transform: scale(1.3);
       }
     }
   }
