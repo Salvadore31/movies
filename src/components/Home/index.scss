@@ -111,7 +111,9 @@
     }
   }
 
-  &__movies {
+  &__movies,
+  &__series,
+  &__multfilms {
     display: flex;
     flex-direction: column;
     width: 100%;

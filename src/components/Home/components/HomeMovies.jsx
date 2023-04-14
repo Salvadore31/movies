@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Movies } from "../../Movies";
+import { Series } from "../../Series";
 import { NavLink } from "react-router-dom";
 
 export const HomeMovies = () => {
@@ -16,7 +16,7 @@ export const HomeMovies = () => {
                 )
             })}</div>
             {/* Настроить навигацию */}
-            <button className="home__button"><NavLink to={Movies} className="home__link">Показать всё</NavLink></button>
+            <button className="home__button"><NavLink to={Series} className="home__link">Показать всё</NavLink></button>
         </div>
     )
 }
