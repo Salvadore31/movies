@@ -5,7 +5,6 @@ import { Multfilms } from "../../Mulfilms";
 
 export const HomeMultfilms = () => {
     const multfilms = useSelector(state => state.homePageMultfilms.homePageMultfilms)
-    console.log(multfilms);
     return (
         <div className="home__multfilms">
             <h2 className="home__subtitle">Мультфильмы</h2>
