@@ -9,6 +9,7 @@
   border-bottom-right-radius: 10rem;
   position: sticky;
   top: 0;
+  z-index: 1000000;
 
   &__top {
     display: flex;

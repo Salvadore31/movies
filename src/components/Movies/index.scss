@@ -1,0 +1,67 @@
+.movies {
+    width: 100%;
+    height: fit-content;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__subtitle {
+        font-weight: bold;
+        font-size: 7rem;
+        color: white;
+        margin-bottom: 4rem;
+    }
+
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5rem 6.6rem;
+        width: 100%;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        transition: transform 500ms ease;
+
+        .img {
+            width: 30rem;
+            border-radius: 3rem 3rem 0 0;
+            cursor: pointer;
+        }
+    }
+
+    &__item:hover {
+        transform: scale(1.2);
+    }
+
+    &__info {
+        display: flex;
+        width: 30rem;
+        border-bottom-left-radius: 3rem;
+        border-bottom-right-radius: 3rem;
+        align-items: center;
+        background-color: black;
+        height: fit-content;
+        justify-content: space-between;
+    }
+
+    &__rating {
+        color: white;
+        font-size: 1.8rem;
+        margin: 1rem;
+        background-color: rgba(115, 115, 115, 0.306);
+        border-radius: 3rem;
+        padding: 0.5rem;
+        border: 1px solid yellowgreen;
+    }
+
+    &__genres,
+    &__year,
+    &__length {
+        color: white;
+        font-size: 1.8rem;
+        margin-right: 1rem;
+    }
+}

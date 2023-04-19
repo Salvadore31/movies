@@ -10,6 +10,7 @@
 
   &__random-film {
     display: flex;
+    justify-content: center;
     gap: 4rem;
     width: 100%;
     max-width: 90rem;
@@ -116,11 +117,12 @@
   &__multfilms {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    max-width: 140rem;
-    height: fit-content;
+    // justify-content: center;
+    // width: 100%;
+    // max-width: 140rem;
+    // height: fit-content;
     padding: 4rem 4rem;
-    justify-content: space-between;
+    // justify-content: space-between;
 
     .movies {
       color: white;
