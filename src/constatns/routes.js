@@ -27,7 +27,17 @@ export const routes = [
     },
     {
         id: 6,
-        element: <CurrentFilm/>,
+        element: <CurrentFilm />,
         to: '/movies/:id'
+    },
+    {
+        id: 5,
+        element: <CurrentFilm />,
+        to: '/multfilms/:id'
+    },
+    {
+        id: 7,
+        element: <CurrentFilm />,
+        to: '/series/:id'
     }
 ]
