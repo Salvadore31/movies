@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default class GetMovies {
-    static async getAll(url ,typeNumber) {
+    static async getAll(url, typeNumber) {
         try {
             const response = await axios.get(url, {
                 params: {

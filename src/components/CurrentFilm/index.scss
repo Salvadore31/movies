@@ -1,4 +1,64 @@
 .current-film {
-    font-size: 2rem;
-    color: white;
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    width: 100%;
+    height: fit-content;
+
+    padding: 1rem;
+    box-shadow: 0 0 10px white;
+    border-radius: 3rem;
+
+    .img {
+        border-radius: 3rem;
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        color: white;
+        font-size: 3rem;
+        font-weight: 400;
+
+        span {
+            font-weight: 700;
+            text-decoration: underline;
+            color: rgb(220, 161, 11);
+        }
+
+        &__title {
+            font-weight: 700;
+            font-size: 8rem;
+            margin-bottom: 5rem
+        }
+
+
+        &__year,
+        &__country,
+        &__rating,
+        &__description,
+        &__genres {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        &__genres {
+            display: block;
+        }
+
+        .icon {
+            width: 5rem;
+            height: 4rem;
+        }
+
+        .kp,
+        .imdb {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+    }
 }

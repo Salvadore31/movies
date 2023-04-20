@@ -65,6 +65,8 @@ export const RandomFilm = () => {
     setShortDescription(text.length === 0 ? "" : text.join(" "));
   }, [description]);
 
+  console.log(film);
+
   return (
     <div className="home__random-film">
       {isLoading ? (
@@ -97,7 +99,7 @@ export const RandomFilm = () => {
             <div className="info__rating">
               <span>Оценки: </span>
               <div className="kp">
-                <img className="icon" src={kp} alt="" /> {rating?.kp}
+                <img className="icon" src={kp} alt="" /> {rating?.kp.toFixed(1)}
               </div>
               <div className="imdb">
                 <img className="icon" src={imbd} alt="" /> {rating?.imdb}

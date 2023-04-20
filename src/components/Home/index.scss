@@ -36,6 +36,7 @@
       span {
         font-weight: 700;
         text-decoration: underline;
+        color: rgb(220, 161, 11);
       }
 
       &__title {
@@ -98,7 +99,7 @@
           height: 4rem;
           padding: 1rem;
           text-transform: uppercase;
-
+          border-radius: 3rem;
           color: white;
           background-color: transparent;
           border: none;
@@ -143,7 +144,7 @@
     width: 15rem;
     border-radius: 1.5rem;
     border: none;
-    background: rgba(124, 124, 124, 0.514);
+    background: rgba(94, 53, 211, 1);
     cursor: pointer;
   }
 
