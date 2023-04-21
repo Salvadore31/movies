@@ -52,7 +52,19 @@
         background-color: rgba(115, 115, 115, 0.306);
         border-radius: 3rem;
         padding: 0.5rem;
-        border: 1px solid yellowgreen;
+
+    }
+
+    &__rating-green {
+        border: 2px solid green;
+    }
+
+    &__rating-orange {
+        border: 2px solid orange;
+    }
+
+    &__rating-red {
+        border: 2px solid red;
     }
 
     &__genres,

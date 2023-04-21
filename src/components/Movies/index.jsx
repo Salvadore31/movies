@@ -29,6 +29,16 @@ export const Movies = () => {
         navigate(`/movies/${el.id}`, { state: { el } })
     }
 
+    function getClassByRate(vote) {
+        if (vote > 7.5) {
+            return 'green'
+        } else if (vote >= 5) {
+            return 'orange'
+        } else {
+            return 'red'
+        }
+    }
+
     return (
         <div className="movies">
             <h2 className="movies__subtitle">Фильмы</h2>
@@ -43,7 +53,7 @@ export const Movies = () => {
                             <div key={el.id} className="movies__item">
                                 <img onClick={() => onClick(el)} src={el.poster.url} alt="poster" className='img' />
                                 <div className="movies__info">
-                                    <p className='movies__rating'>{el.rating.kp.toFixed(1)}</p>
+                                    <p className={`movies__rating movies__rating-${getClassByRate(el.rating.kp)}`}>{el.rating.kp.toFixed(1)}</p>
                                     <p className='movies__genres'>{el.genres[0].name}</p>
                                     <p className='movies__year'>{el.year}</p>
                                     <p className='movies__length'>{el.movieLength} мин</p>

@@ -24,6 +24,17 @@ export const HomeMultfilms = () => {
     const onClick = (el) => {
         navigate(`/multfilms/${el.id}`, { state: { el } })
     }
+
+    function getClassByRate(vote) {
+        if (vote > 7.5) {
+            return 'green'
+        } else if (vote >= 5) {
+            return 'orange'
+        } else {
+            return 'red'
+        }
+    }
+
     return (
         <div className="home__multfilms">
             {isLoading ? (
@@ -37,6 +48,7 @@ export const HomeMultfilms = () => {
                         return (
                             <div onClick={() => onClick(el)} key={el.id} className="recomendation__movie">
                                 <img src={el.poster.url} alt="poster" className="img" />
+                                <p className={`rating rating-${getClassByRate(el.rating.kp)}`}>{el.rating.kp.toFixed(1)}</p>
                             </div>
                         )
                     })}

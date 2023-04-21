@@ -27,6 +27,16 @@ export const Multfilms = () => {
         navigate(`/multfilms/${el.id}`, { state: { el } })
     }
 
+    function getClassByRate(vote) {
+        if (vote >= 7.5) {
+            return 'green'
+        } else if (vote >= 5) {
+            return 'orange'
+        } else {
+            return 'red'
+        }
+    }
+
     return (
         <div classname="multfilms" >
             <h2 className="multfilms__subtitle">Мультфильмы</h2>
@@ -41,7 +51,7 @@ export const Multfilms = () => {
                             <div key={el.id} className="multfilms__item">
                                 <img onClick={() => onClick(el)} src={el.poster.url} alt="poster" className='img' />
                                 <div className="multfilms__info">
-                                    <p className='multfilms__rating'>{el.rating.kp.toFixed(1)}</p>
+                                    <p className={`multfilms__rating multfilms__rating-${getClassByRate(el.rating.kp)}`}>{el.rating.kp.toFixed(1)}</p>
                                     <p className='multfilms__genres'>{el.genres[0].name}</p>
                                     <p className='multfilms__year'>{el.year}</p>
                                     <p className='multfilms__length'>{el.movieLength} мин</p>
