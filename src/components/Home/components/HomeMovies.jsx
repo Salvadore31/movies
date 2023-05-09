@@ -45,7 +45,6 @@ export const HomeMovies = () => {
                 <>
                     <h2 className="home__subtitle">Фильмы</h2>
                     <div className="recomendation">  {films.map((el) => {
-                        console.log(el);
                         return (
                             <div onClick={() => onClick(el)} key={el.id} className="recomendation__movie">
                                 <img src={el.poster.url} alt="poster" className="img" />

@@ -4,10 +4,19 @@ import kp from "../../../assets/icon/kp.svg";
 import imbd from "../../../assets/icon/imdb.svg";
 import GetMovies from "../../../API/GetMovies";
 import { Spinner } from "../../UI/Spinner";
+import { useNavigate } from "react-router-dom";
 
 export const RandomFilm = () => {
   const [film, setFilm] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [director, setDirector] = useState({});
+  const [countries, setCountries] = useState([]);
+  const [genres, setGenres] = useState([]);
+  const [rating, setRating] = useState({});
+  const [shortDescription, setShortDescription] = useState("");
+  const [description, setDescription] = useState("");
+  const [showFullDescription, setShowFullDescription] = useState(false)
+  const navigate = useNavigate()
 
   const fetchRandomFilm = async () => {
     setIsLoading(true);
@@ -22,13 +31,6 @@ export const RandomFilm = () => {
   useEffect(() => {
     fetchRandomFilm();
   }, []);
-
-  const [director, setDirector] = useState({});
-  const [countries, setCountries] = useState([]);
-  const [genres, setGenres] = useState([]);
-  const [rating, setRating] = useState({});
-  const [shortDescription, setShortDescription] = useState("");
-  const [description, setDescription] = useState("");
 
   useEffect(() => {
     setCountries(
@@ -65,14 +67,28 @@ export const RandomFilm = () => {
     setShortDescription(text.length === 0 ? "" : text.join(" "));
   }, [description]);
 
-  console.log(film);
+  const goToFilm = (el) => {
+    // if(film.typeNumber === 1) {
+    //   navigate(`/movies/${el.id}`, { state: { el } });
+    // }
+    // if(film.typeNumber === 2) {
+    //   navigate(`/series/${el.id}`, { state: { el } })
+    // }
+    // if(film.typeNumber === 3) {
+    //   navigate(`/multfilms/${el.id}`, { state: { el } })
+    // }
+
+    film.typeNumber === 1 
+    ? navigate(`/movies/${el.id}`, { state: { el } }) 
+    : film.typeNumber === 2 
+    ? navigate(`/series/${el.id}`, { state: { el } })
+    : navigate(`/multfilms/${el.id}`, { state: { el } })
+  }
 
   return (
     <div className="home__random-film">
       {isLoading ? (
-        <div>
           <Spinner />
-        </div>
       ) : (
         <>
           <img className="img" src={film?.poster?.url} alt="" />
@@ -80,9 +96,17 @@ export const RandomFilm = () => {
           <div className="info">
             <div className="info__title">{film?.name}</div>
             <div className="info__description">
-              {shortDescription}
-              {shortDescription ? "..." : null}{" "}
-              {shortDescription ? <button>Читать далее</button> : null}
+              {!showFullDescription
+              ? <>
+                  {shortDescription + "..."}
+                  {shortDescription ? <button style={{color: "#dca10b"}} onClick={() => setShowFullDescription(!showFullDescription)}>Читать далее</button> : null}
+                </>
+              : <>
+                {description}
+                {description ? <button style={{color: "#dca10b"}} onClick={() => setShowFullDescription(!showFullDescription)}>Скрыть</button> : null}
+                </> 
+              }
+
             </div>
             <div className="info__year">
               <span>Год выпуска:</span> {film?.year}
@@ -107,7 +131,7 @@ export const RandomFilm = () => {
             </div>
 
             <div className="info__buttons">
-              <button>Больше информации</button>
+              <button onClick={() => goToFilm(film)}>Больше информации</button>
 
               <button>
                 <svg
