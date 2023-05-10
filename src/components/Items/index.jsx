@@ -10,7 +10,7 @@ export const Items = ({ classes, item, onClick }) => {
           <div key={item.id} className="item">
             <img
               onClick={() => onClick(el)}
-              src={el.poster.url}
+              src={el?.poster?.url}
               alt="poster"
               className="img"
             />
@@ -22,9 +22,9 @@ export const Items = ({ classes, item, onClick }) => {
               >
                 {el.rating.kp.toFixed(1)}
               </p>
-              <p className="item__genres">{el.genres[0].name}</p>
-              <p className="item__year">{el.year}</p>
-              <p className="item__length">{el.movieLength} мин</p>
+              <p className="item__genres">{el?.genres[0]?.name}</p>
+              <p className="item__year">{el?.year}</p>
+              <p className="item__length">{el?.movieLength} мин</p>
             </div>
             <div className="item__buttons">
               <button onClick={() => onClick(el)} className="btn_more">

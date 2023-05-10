@@ -10,6 +10,9 @@
     border-radius: 3rem;
 
     .img {
+        width: 100%;
+        max-width: 32rem;
+        height: 50rem;
         border-radius: 3rem;
     }
 
@@ -43,10 +46,6 @@
             align-items: center;
             flex-wrap: wrap;
             gap: 1rem;
-        }
-
-        &__genres {
-            display: block;
         }
 
         .icon {

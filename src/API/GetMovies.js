@@ -1,15 +1,17 @@
 import axios from "axios";
 
 export default class GetMovies {
-    static async getAll(url, typeNumber, limit) {
+    static async getAll(url, typeNumber, limit, curPage) {
         try {
             const response = await axios.get(url, {
                 params: { // тут мы прописываем все возможные параметры, которые существуют в api и которые мы подгружаем на 4 строке
                     typeNumber: typeNumber,
-                    limit: limit
+                    limit: limit,
+                    page: curPage
                 },
                 headers: {
-                    'X-API-KEY': 'GF1AKFK-QDQMK5V-N6ANZEM-MFJE27E',
+                    // 'X-API-KEY': 'GF1AKFK-QDQMK5V-N6ANZEM-MFJE27E', // Алексей
+                    'X-API-KEY': '3J11JSE-62ZMZVE-M13CAMT-NSMAJXV', // Павел
                     'Content-Type': 'application/jsonp',
                     "Access-Control-Allow-Origin": "*"
                 }
