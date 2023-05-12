@@ -27,6 +27,16 @@ export const CurrentFilm = () => {
     fetchItem();
   }, []);
 
+  const navigate = useNavigate()
+
+  const goToPersons = (el) => {
+    item.typeNumber === 1
+      ? navigate(`/movies/${el.id}/persons`, { state: { el } })
+      : item.typeNumber === 2
+        ? navigate(`/series/${el.id}/persons`, { state: { el } })
+        : navigate(`/multfilms/${el.id}/persons`, { state: { el } })
+  }
+
   return (
     <>
       {isLoading ? (
@@ -74,9 +84,7 @@ export const CurrentFilm = () => {
             </div>
             <div className="info__actors">
               <span>Актёры:</span> {item?.persons?.filter(el => el.profession === 'актеры' ? el.name : null).slice(0, 5).map(el => el.name).join(', ')}
-              <NavLink to={''} className={"actors__link"}>
-                и др.
-              </NavLink>
+              <button className="actors__link" onClick={() => goToPersons(item)}>и др</button>
             </div>
           </div>
         </div>
