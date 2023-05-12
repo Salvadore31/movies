@@ -2,6 +2,7 @@ import { CurrentFilm } from "../components/CurrentFilm";
 import { Home } from "../components/Home";
 import { Movies } from "../components/Movies";
 import { Multfilms } from "../components/Mulfilms";
+import Persons from "../components/Persons";
 import { Series } from "../components/Series";
 
 export const routes = [
@@ -39,5 +40,20 @@ export const routes = [
         id: 7,
         element: <CurrentFilm />,
         to: '/series/:id'
+    },
+    {
+        id: 8,
+        element: <Persons />,
+        to: '/movies/:id/persons'
+    },
+    {
+        id: 9,
+        element: <Persons />,
+        to: '/series/:id/persons'
+    },
+    {
+        id: 10,
+        element: <Persons />,
+        to: '/multfilms/:id/persons'
     }
 ]

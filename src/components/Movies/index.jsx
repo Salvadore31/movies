@@ -14,13 +14,11 @@ export const Movies = () => {
   const [countPages, setCountPages] = useState(0)
   const [curPage, setCurPage] = useState(1)
 
-  console.log(curPage);
-
   const fetchData = async () => {
     setIsLoading(true); // нужно обязательно при подгрузке данных ставить статус тру, потому что иначе у тебя спиннер сработает лишь один раз и больше ни когда не появится
 
     const typeNumber = 1;
-    const limit = 32; // создаем переменную для каждого параметра отдельно, не стоит писать ее в url, и передаем ее в класс GetMovies, где прописываем ее в params
+    const limit = 8; // создаем переменную для каждого параметра отдельно, не стоит писать ее в url, и передаем ее в класс GetMovies, где прописываем ее в params
     const url = "https://api.kinopoisk.dev/v1/movie";
     const movies = await GetMovies.getAll(url, typeNumber, limit, curPage);
     setCountPages(movies.pages)
@@ -45,9 +43,9 @@ export const Movies = () => {
   return (
     <div className="movies">
       <h2 className="movies__subtitle">Фильмы</h2>
-      {isLoading 
-      ? <Spinner />
-      : <Items classes={"movies"} item={movies} onClick={onClick} /> // сделал небольшую компановку, чтобы код был более читабельным. Так же нужно проделать и в сериала и мультиках. Компонент используешь этот же
+      {isLoading
+        ? <Spinner />
+        : <Items classes={"movies"} item={movies} onClick={onClick} /> // сделал небольшую компановку, чтобы код был более читабельным. Так же нужно проделать и в сериала и мультиках. Компонент используешь этот же
       }
       <ReactPaginate
         className="pagination"

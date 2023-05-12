@@ -3,7 +3,7 @@ import "./index.scss"
 import GetMovies from '../../../API/GetMovies'
 import axios from 'axios'
 
-export const SearchWindow = ({}) => {
+export const SearchWindow = ({ }) => {
     return (
         <div className='search-window'>
             хуесос
@@ -17,39 +17,39 @@ export const Search = () => {
     const [isLoading, setIsLoading] = useState(false)
     const [items, setItems] = useState([])
 
-    const fetchItems = async () => {
-        setIsLoading(true)
+    // const fetchItems = async () => {
+    //     setIsLoading(true)
 
-        const limit = 1000
-        const movies = await axios.get("https://api.kinopoisk.dev/v1/movie", {
-            headers: {
-                // 'X-API-KEY': 'GF1AKFK-QDQMK5V-N6ANZEM-MFJE27E', // Алексей
-                'X-API-KEY': '3J11JSE-62ZMZVE-M13CAMT-NSMAJXV', // Павел
-                'Content-Type': 'application/jsonp',
-                "Access-Control-Allow-Origin": "*"
-            },
-            params: {
-                limit: limit
-            }
-        });
-        setItems(movies.data)
+    //     const limit = 1000
+    //     const movies = await axios.get("https://api.kinopoisk.dev/v1/movie", {
+    //         headers: {
+    //             // 'X-API-KEY': 'GF1AKFK-QDQMK5V-N6ANZEM-MFJE27E', // Алексей
+    //             'X-API-KEY': '3J11JSE-62ZMZVE-M13CAMT-NSMAJXV', // Павел
+    //             'Content-Type': 'application/jsonp',
+    //             "Access-Control-Allow-Origin": "*"
+    //         },
+    //         params: {
+    //             limit: limit
+    //         }
+    //     });
+    //     setItems(movies.data)
 
-        setIsLoading(false)
-    }
+    //     setIsLoading(false)
+    // }
 
-    console.log(items);
+    // // console.log(items);
 
-    useEffect(() => {
-        fetchItems()
-    }, [])
+    // useEffect(() => {
+    //     fetchItems()
+    // }, [])
 
-    useEffect(() => {
-        if(text === "") {
-            setSearchWindow(false)
-        } else {
-            setSearchWindow(true)
-        }
-    }, [text])
+    // useEffect(() => {
+    //     if(text === "") {
+    //         setSearchWindow(false)
+    //     } else {
+    //         setSearchWindow(true)
+    //     }
+    // }, [text])
 
     return (
         <div className='search'>
@@ -60,7 +60,7 @@ export const Search = () => {
                 </svg>
             </button>
 
-            {searchWindow && <SearchWindow/>}
+            {searchWindow && <SearchWindow />}
         </div>
     )
 }

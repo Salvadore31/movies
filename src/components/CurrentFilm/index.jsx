@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./index.scss";
-import { useLocation, useParams } from "react-router-dom";
+import { NavLink, useLocation, useNavigate, useParams } from "react-router-dom";
 import imdb from "../../assets/icon/imdb.svg";
 import kp from "../../assets/icon/kp.svg";
 import GetMovies from "../../API/GetMovies";
@@ -51,7 +51,7 @@ export const CurrentFilm = () => {
               }).join(", ")}
             </div>
             <div className="info__country">
-              <span>Страна: </span> 
+              <span>Страна: </span>
               {item?.countries?.map(el => {
                 return Object.values(el)
               }).join(", ")}
@@ -65,6 +65,18 @@ export const CurrentFilm = () => {
               <div className="imdb">
                 <img className="icon" src={imdb} alt="" /> {item?.rating?.imdb}
               </div>
+            </div>
+            <div className="info__length">
+              <span>Длительность:</span> {item.movieLength} мин
+            </div>
+            <div className="info__director">
+              <span>Режиссёр:</span> {item?.persons?.filter(el => el.profession === "режиссеры" ? el.name : null).map(el => el.name).join(", ")}
+            </div>
+            <div className="info__actors">
+              <span>Актёры:</span> {item?.persons?.filter(el => el.profession === 'актеры' ? el.name : null).slice(0, 5).map(el => el.name).join(', ')}
+              <NavLink to={''} className={"actors__link"}>
+                и др.
+              </NavLink>
             </div>
           </div>
         </div>
