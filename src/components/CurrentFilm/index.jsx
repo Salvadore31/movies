@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./index.scss";
-import { NavLink, useLocation, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import imdb from "../../assets/icon/imdb.svg";
 import kp from "../../assets/icon/kp.svg";
 import GetMovies from "../../API/GetMovies";
@@ -10,8 +10,6 @@ export const CurrentFilm = () => {
   const { id } = useParams();
   const [isLoading, setIsLoading] = useState(false);
   const [item, setItem] = useState({});
-
-  console.log(item);
 
   const fetchItem = async () => {
     setIsLoading(true);
@@ -83,8 +81,8 @@ export const CurrentFilm = () => {
               <span>Режиссёр:</span> {item?.persons?.filter(el => el.profession === "режиссеры" ? el.name : null).map(el => el.name).join(", ")}
             </div>
             <div className="info__actors">
-              <span>Актёры:</span> {item?.persons?.filter(el => el.profession === 'актеры' ? el.name : null).slice(0, 5).map(el => el.name).join(', ')}
-              <button className="actors__link" onClick={() => goToPersons(item)}>и др</button>
+              <span>Актёры:</span> {item?.persons?.filter(el => el.profession === 'актеры' ? el.name : null).slice(0, 5).map(el => el.name).join(', ')}...
+              <button className="actors__link" onClick={() => goToPersons(item)}>{item?.persons?.length} актёров</button>
             </div>
           </div>
         </div>

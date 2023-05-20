@@ -16,6 +16,9 @@ export const Multfilms = () => {
     const [curPage, setCurPage] = useState(1)
 
     const fetchData = async () => {
+
+        setIsLoading(true)
+
         const limit = 8
         const typeNumber = 3
         const url = "https://api.kinopoisk.dev/v1/movie"

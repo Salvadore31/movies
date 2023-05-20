@@ -6,7 +6,7 @@ import axios from 'axios'
 export const SearchWindow = ({ }) => {
     return (
         <div className='search-window'>
-            хуесос
+            Не работает
         </div>
     )
 }
@@ -20,31 +20,29 @@ export const Search = () => {
     // const fetchItems = async () => {
     //     setIsLoading(true)
 
-    //     const limit = 1000
     //     const movies = await axios.get("https://api.kinopoisk.dev/v1/movie", {
     //         headers: {
-    //             // 'X-API-KEY': 'GF1AKFK-QDQMK5V-N6ANZEM-MFJE27E', // Алексей
-    //             'X-API-KEY': '3J11JSE-62ZMZVE-M13CAMT-NSMAJXV', // Павел
+    //             'X-API-KEY': 'GF1AKFK-QDQMK5V-N6ANZEM-MFJE27E', // Алексей
+    //             // 'X-API-KEY': '3J11JSE-62ZMZVE-M13CAMT-NSMAJXV', // Павел
     //             'Content-Type': 'application/jsonp',
     //             "Access-Control-Allow-Origin": "*"
     //         },
     //         params: {
-    //             limit: limit
     //         }
     //     });
-    //     setItems(movies.data)
+    //     setItems(movies)
 
     //     setIsLoading(false)
     // }
 
-    // // console.log(items);
+    // console.log(items);
 
     // useEffect(() => {
     //     fetchItems()
     // }, [])
 
     // useEffect(() => {
-    //     if(text === "") {
+    //     if (text === "") {
     //         setSearchWindow(false)
     //     } else {
     //         setSearchWindow(true)

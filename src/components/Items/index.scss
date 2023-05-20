@@ -1,7 +1,7 @@
 .item {
   display: flex;
   flex-direction: column;
-  transition: transform 500ms ease;
+  // transition: transform 500ms ease;
   height: fit-content;
 
   .img {
@@ -10,9 +10,9 @@
     cursor: pointer;
   }
 
-    //   &:hover {
-    //     transform: scale(1.2);
-    //   }
+  //   &:hover {
+  //     transform: scale(1.2);
+  //   }
 
   &__info {
     display: flex;
@@ -63,26 +63,26 @@
 }
 
 .btn_more {
-    font-size: 1.8rem;
-    padding: 1rem;
-    margin: 0 1rem 1rem 1rem;
-    width: 15rem;
-    border-radius: 3rem;
-    border: none;
-    background: rgba(94, 53, 211, 1);
-    cursor: pointer;
-    color: white;
+  font-size: 1.8rem;
+  padding: 1rem;
+  margin: 0 1rem 1rem 1rem;
+  width: 15rem;
+  border-radius: 3rem;
+  border: none;
+  background: rgba(94, 53, 211, 1);
+  cursor: pointer;
+  color: white;
 }
 
 .btn_more:hover {
-    border: 1px solid rgba(192, 192, 192, 0.595);
-    box-shadow: 0 0 10px white;
+  border: 1px solid rgba(192, 192, 192, 0.595);
+  box-shadow: 0 0 10px white;
 }
 
 .btn_favorite {
-    cursor: pointer;
-    border: none;
-    background-color: transparent;
-    color: white;
-    margin: 0 1rem 1rem 1rem;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: white;
+  margin: 0 1rem 1rem 1rem;
 }
