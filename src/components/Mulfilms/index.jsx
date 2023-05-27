@@ -42,7 +42,7 @@ export const Multfilms = () => {
     }
 
     return (
-        <div classname="multfilms" >
+        <div className="multfilms" >
             <h2 className="multfilms__subtitle">Мультфильмы</h2>
             {isLoading ?
                 <Spinner />

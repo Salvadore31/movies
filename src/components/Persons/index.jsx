@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './index.scss';
 import GetMovies from '../../API/GetMovies';
 import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export const Persons = () => {
     const { id } = useParams();
@@ -24,6 +25,13 @@ export const Persons = () => {
         fetchItem();
     }, []);
 
+    const navigate = useNavigate()
+
+    const goToPerson = (el) => {
+        navigate(`/persons/${el}`)
+        console.log(el);
+    }
+
     return (
         <div className='persons'>
             <h3 className='persons__subtitle'>Режиссёры</h3>
@@ -31,7 +39,7 @@ export const Persons = () => {
                 {persons?.filter(el => el.profession === 'режиссеры' ? el : null).map((el) => {
                     return (
                         <div className="persons__profession">
-                            <img className='persons__photo' src={el?.photo} alt={el?.name} />
+                            <img onClick={() => goToPerson(el.id)} className='persons__photo' src={el?.photo} alt={el?.name} />
                             <div className="persons__names">
                                 <p className="persons__name">
                                     {el.name}

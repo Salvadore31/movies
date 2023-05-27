@@ -8,7 +8,7 @@ import { links } from "../../constatns/links";
 export const Header = () => {
 
   const [profileOpen, setProfileOpen] = useState(false)
-  console.log(profileOpen);
+
   const openProfile = () => {
 
   }

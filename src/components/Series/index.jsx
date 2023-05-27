@@ -41,7 +41,7 @@ export const Series = () => {
     }
 
     return (
-        <div classname="series" >
+        <div className="series" >
             <h2 className="series__subtitle">Сериалы</h2>
             {isLoading ?
                 <Spinner />
