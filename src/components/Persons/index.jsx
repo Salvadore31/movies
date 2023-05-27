@@ -28,7 +28,7 @@ export const Persons = () => {
     const navigate = useNavigate()
 
     const goToPerson = (el) => {
-        navigate(`/persons/${el}`)
+        navigate(`/person/${el}`)
         console.log(el);
     }
 

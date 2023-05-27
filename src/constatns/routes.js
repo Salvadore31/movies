@@ -66,6 +66,6 @@ export const routes = [
     {
         id: 12,
         element: <Person />,
-        to: '/persons/:id'
+        to: '/person/:id'
     }
 ]
