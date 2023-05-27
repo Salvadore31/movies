@@ -3,6 +3,7 @@ import { Favorite } from "../components/Favorites";
 import { Home } from "../components/Home";
 import { Movies } from "../components/Movies";
 import { Multfilms } from "../components/Mulfilms";
+import { Person } from "../components/Person";
 import { Persons } from "../components/Persons";
 import { Series } from "../components/Series";
 
@@ -61,5 +62,10 @@ export const routes = [
         id: 11,
         element: <Favorite />,
         to: '/favorite'
+    },
+    {
+        id: 12,
+        element: <Person />,
+        to: '/persons/:id'
     }
 ]

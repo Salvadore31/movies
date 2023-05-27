@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './index.scss'
 import GetMovies from '../../API/GetMovies';
+import { useParams } from 'react-router-dom';
 
 export const Person = () => {
 
     const [isLoading, setIsLoading] = useState(false);
     const [persons, setPersons] = useState([]);
+    const { id } = useParams();
 
-    // console.log(persons);
+    console.log(persons);
 
     const fetchItem = async () => {
         setIsLoading(true);
@@ -27,12 +29,7 @@ export const Person = () => {
 
     return (
         <div>
-            asdfasdfsadfsadfsa
-            <dfn>asdf
-                asdfasdfsadfsadfsadf
-                sadf
-                asdfasdfsadfsadfsa
-            </dfn>
+            PERSON
         </div>
     )
 }
