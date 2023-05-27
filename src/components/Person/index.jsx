@@ -6,17 +6,17 @@ import { useParams } from 'react-router-dom';
 export const Person = () => {
 
     const [isLoading, setIsLoading] = useState(false);
-    const [persons, setPersons] = useState([]);
+    const [person, setPerson] = useState([]);
     const { id } = useParams();
 
-    console.log(persons);
+    console.log(person);
 
     const fetchItem = async () => {
         setIsLoading(true);
 
         const url = `https://api.kinopoisk.dev/v1/person/${id}`;
-        const movies = await GetMovies.getAll(url);
-        setPersons(movies.persons);
+        const person = await GetMovies.getAll(url);
+        setPerson(person);
 
         setIsLoading(false);
     };
