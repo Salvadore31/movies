@@ -1,35 +1,33 @@
-import React, { useEffect, useState } from 'react';
-import './index.scss'
-import GetMovies from '../../API/GetMovies';
-import { useParams } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import "./index.scss";
+import GetMovies from "../../API/GetMovies";
+import { useParams } from "react-router-dom";
+import { Spinner } from "../../components/UI/Spinner";
 
 export const Person = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [person, setPerson] = useState([]);
+  const { id } = useParams();
 
-    const [isLoading, setIsLoading] = useState(false);
-    const [person, setPerson] = useState([]);
-    const { id } = useParams();
+  console.log(person);
 
-    console.log(person);
+  const fetchItem = async () => {
+    setIsLoading(true);
 
-    const fetchItem = async () => {
-        setIsLoading(true);
+    const url = `https://api.kinopoisk.dev/v1/person/${id}`;
+    const person = await GetMovies.getAll(url);
+    setPerson(person);
 
-        const url = `https://api.kinopoisk.dev/v1/person/${id}`;
-        const person = await GetMovies.getAll(url);
-        setPerson(person);
+    setIsLoading(false);
+  };
 
-        setIsLoading(false);
-    };
+  useEffect(() => {
+    fetchItem();
+  }, []);
 
-    useEffect(() => {
-        fetchItem();
-    }, []);
-
-
-
-    return (
-        <div>
-            PERSON
-        </div>
-    )
-}
+  return <>
+    {isLoading 
+    ? <Spinner/> 
+    : <div>Person</div>}
+    </>;
+};

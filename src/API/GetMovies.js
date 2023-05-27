@@ -10,8 +10,8 @@ export default class GetMovies {
                     page: curPage
                 },
                 headers: {
-                    'X-API-KEY': 'GF1AKFK-QDQMK5V-N6ANZEM-MFJE27E', // Алексей
-                    // 'X-API-KEY': '3J11JSE-62ZMZVE-M13CAMT-NSMAJXV', // Павел
+                    // 'X-API-KEY': 'GF1AKFK-QDQMK5V-N6ANZEM-MFJE27E', // Алексей
+                    'X-API-KEY': '3J11JSE-62ZMZVE-M13CAMT-NSMAJXV', // Павел
                     'Content-Type': 'application/jsonp',
                     "Access-Control-Allow-Origin": "*"
                 }
