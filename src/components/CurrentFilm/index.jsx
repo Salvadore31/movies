@@ -42,7 +42,6 @@ export const CurrentFilm = () => {
       ) : (
         <div className="current-film">
           <img src={item?.poster?.url} alt="poster" className="img" />
-
           <div className="info">
             <div className="info__title">{item.name}</div>
             <div className="info__description">

@@ -31,7 +31,7 @@
     .info {
       display: flex;
       flex-direction: column;
-      gap: 2.3rem;
+      gap: 1.5rem;
       width: 100%;
 
       span {
@@ -55,7 +55,7 @@
         display: flex;
         align-items: center;
         flex-wrap: wrap;
-        gap: 2rem;
+        gap: 1rem;
         font-size: 2rem;
         color: white;
       }
@@ -98,22 +98,22 @@
         display: flex;
         align-items: center;
         gap: 2rem;
+        margin-bottom: 2rem;
 
-        button {
+        .btn_more {
           cursor: pointer;
-          width: fit-content;
           height: 4rem;
           padding: 1rem;
-          text-transform: uppercase;
           border-radius: 3rem;
           color: white;
-          background-color: transparent;
+          background-color: orange;
           border: none;
+          margin: 0;
+
         }
 
-        button:first-child() {
-          background-color: orange;
-          font-weight: 700;
+        .btn_favorite {
+          margin: 0;
         }
       }
     }

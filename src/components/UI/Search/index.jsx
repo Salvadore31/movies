@@ -2,12 +2,31 @@ import React, { useEffect, useState } from "react";
 import "./index.scss";
 import axios from "axios";
 import { useMemo } from "react";
+import kp from '../../../assets/icon/kp.svg';
+import imdb from '../../../assets/icon/imdb.svg';
+import { getClassByRate } from '../../../constatns/functions';
 
 export const SearchWindow = ({ items }) => {
   return (
     <div className="search-window">
       {items.map((el) => {
-        return <div>{el.name}</div>;
+        return <div className="result" key={el.id}>
+          <img className="result__poster" src={el.poster.url} alt={el.name} />
+          <div className="result__info">
+            <div className="result__names">
+              <div className="result__name">{el.name}</div>
+              <div className="result__alternativeNameAndYear">{el.alternativeName}  {el.year}</div>
+            </div>
+            <div className="result__rating">
+              <div className={`kp kp-${getClassByRate(el.rating.kp)}`}>
+                <img className="icon" src={kp} alt="КП" />{el.rating.kp.toFixed(1)}
+              </div>
+              <div className={`imdb imdb-${getClassByRate(el.rating.imdb)}`}>
+                <img className="icon" src={imdb} alt="imdb" />{el.rating?.imdb}
+              </div>
+            </div>
+          </div>
+        </div>;
       })}
     </div>
   );
@@ -31,7 +50,7 @@ export const Search = () => {
         "Access-Control-Allow-Origin": "*",
       },
       params: {
-        limit: 1000,
+        limit: 10000,
       },
     });
     setItems(movies.data.docs);

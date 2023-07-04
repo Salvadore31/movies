@@ -1,7 +1,6 @@
 .item {
   display: flex;
   flex-direction: column;
-  // transition: transform 500ms ease;
   height: fit-content;
 
   .img {
@@ -9,10 +8,6 @@
     border-radius: 3rem 3rem 0 0;
     cursor: pointer;
   }
-
-  //   &:hover {
-  //     transform: scale(1.2);
-  //   }
 
   &__info {
     display: flex;

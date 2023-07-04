@@ -86,8 +86,8 @@ export const RandomFilm = () => {
     film.typeNumber === 1
       ? navigate(`/movies/${el.id}`, { state: { el } })
       : film.typeNumber === 2
-      ? navigate(`/series/${el.id}`, { state: { el } })
-      : navigate(`/multfilms/${el.id}`, { state: { el } });
+        ? navigate(`/series/${el.id}`, { state: { el } })
+        : navigate(`/multfilms/${el.id}`, { state: { el } });
   };
 
   const addItemToFavorites = () => {
@@ -120,10 +120,7 @@ export const RandomFilm = () => {
                   {shortDescription ? (
                     <button
                       style={{ color: "#dca10b" }}
-                      onClick={() =>
-                        setShowFullDescription(!showFullDescription)
-                      }
-                    >
+                      onClick={() => setShowFullDescription(!showFullDescription)}>
                       Читать далее
                     </button>
                   ) : null}
@@ -135,9 +132,7 @@ export const RandomFilm = () => {
                     <button
                       style={{ color: "#dca10b" }}
                       onClick={() =>
-                        setShowFullDescription(!showFullDescription)
-                      }
-                    >
+                        setShowFullDescription(!showFullDescription)}>
                       Скрыть
                     </button>
                   ) : null}
@@ -167,14 +162,16 @@ export const RandomFilm = () => {
             </div>
 
             <div className="info__buttons">
-              <button onClick={() => goToFilm(film)}>Больше информации</button>
+              <button onClick={() => goToFilm(film)} className="btn_more">
+                Подробнее
+              </button>
 
-              <button onClick={addItemToFavorites}>
+              <button onClick={addItemToFavorites} className="btn_favorite">
                 {fav ? (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
+                    width="25"
+                    height="25"
                     fill="gold"
                     class="bi bi-star-fill"
                     viewBox="0 0 16 16"
@@ -184,8 +181,8 @@ export const RandomFilm = () => {
                 ) : (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
+                    width="25"
+                    height="25"
                     fill="currentColor"
                     className="bi bi-star"
                     viewBox="0 0 16 16"

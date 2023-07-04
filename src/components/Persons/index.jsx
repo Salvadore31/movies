@@ -9,8 +9,6 @@ export const Persons = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [persons, setPersons] = useState([]);
 
-    console.log(persons);
-
     const fetchItem = async () => {
         setIsLoading(true);
 
@@ -28,8 +26,7 @@ export const Persons = () => {
     const navigate = useNavigate()
 
     const goToPerson = (el) => {
-        navigate(`/person/${el}`)
-        console.log(el);
+        navigate(`/person/${el}`);
     }
 
     return (
@@ -57,7 +54,7 @@ export const Persons = () => {
                 {persons?.filter(el => el.profession === 'актеры' ? el : null).map((el) => {
                     return (
                         <div className="persons__profession">
-                            <img className='persons__photo' src={el?.photo} alt={el?.name} />
+                            <img onClick={() => goToPerson(el.id)} className='persons__photo' src={el?.photo} alt={el?.name} />
                             <div className="persons__names">
                                 <p className="persons__name">
                                     {el.name}
@@ -75,7 +72,7 @@ export const Persons = () => {
                 {persons?.filter(el => el.profession === 'композиторы' ? el : null).map((el) => {
                     return (
                         <div className="persons__profession">
-                            <img className='persons__photo' src={el?.photo} alt={el?.name} />
+                            <img onClick={() => goToPerson(el.id)} className='persons__photo' src={el?.photo} alt={el?.name} />
                             <div className="persons__names">
                                 <p className="persons__name">
                                     {el.name}
@@ -93,7 +90,7 @@ export const Persons = () => {
                 {persons?.filter(el => el.profession === 'художники' ? el : null).map((el) => {
                     return (
                         <div className="persons__profession">
-                            <img className='persons__photo' src={el?.photo} alt={el?.name} />
+                            <img onClick={() => goToPerson(el.id)} className='persons__photo' src={el?.photo} alt={el?.name} />
                             <div className="persons__names">
                                 <p className="persons__name">
                                     {el.name}
@@ -111,7 +108,7 @@ export const Persons = () => {
                 {persons?.filter(el => el.profession === 'монтажеры' ? el : null).map((el) => {
                     return (
                         <div className="persons__profession">
-                            <img className='persons__photo' src={el?.photo} alt={el?.name} />
+                            <img onClick={() => goToPerson(el.id)} className='persons__photo' src={el?.photo} alt={el?.name} />
                             <div className="persons__names">
                                 <p className="persons__name">
                                     {el.name}
@@ -129,7 +126,7 @@ export const Persons = () => {
                 {persons?.filter(el => el.profession === 'операторы' ? el : null).map((el) => {
                     return (
                         <div className="persons__profession">
-                            <img className='persons__photo' src={el?.photo} alt={el?.name} />
+                            <img onClick={() => goToPerson(el.id)} className='persons__photo' src={el?.photo} alt={el?.name} />
                             <div className="persons__names">
                                 <p className="persons__name">
                                     {el.name}
@@ -147,7 +144,7 @@ export const Persons = () => {
                 {persons?.filter(el => el.profession === 'продюсеры' ? el : null).map((el) => {
                     return (
                         <div className="persons__profession">
-                            <img className='persons__photo' src={el?.photo} alt={el?.name} />
+                            <img onClick={() => goToPerson(el.id)} className='persons__photo' src={el?.photo} alt={el?.name} />
                             <div className="persons__names">
                                 <p className="persons__name">
                                     {el.name}
@@ -165,7 +162,7 @@ export const Persons = () => {
                 {persons?.filter(el => el.profession === 'актеры дубляжа' ? el : null).map((el) => {
                     return (
                         <div className="persons__profession">
-                            <img className='persons__photo' src={el?.photo} alt={el?.name} />
+                            <img onClick={() => goToPerson(el.id)} className='persons__photo' src={el?.photo} alt={el?.name} />
                             <div className="persons__names">
                                 <p className="persons__name">
                                     {el.name}
@@ -183,7 +180,7 @@ export const Persons = () => {
                 {persons?.filter(el => el.profession === 'редакторы' ? el : null).map((el) => {
                     return (
                         <div className="persons__profession">
-                            <img className='persons__photo' src={el?.photo} alt={el?.name} />
+                            <img onClick={() => goToPerson(el.id)} className='persons__photo' src={el?.photo} alt={el?.name} />
                             <div className="persons__names">
                                 <p className="persons__name">
                                     {el.name}

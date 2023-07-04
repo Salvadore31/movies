@@ -38,14 +38,80 @@
 
     &-window {
         position: absolute;
-        bottom: -15rem;
-
-        background-color: white;
+        top: 5.5rem;
+        background-color: whitesmoke;
         width: 100%;
-        padding: 1rem;
         border-radius: 1rem;
-        font-size: 2rem;
         overflow: auto;
-        height: 15rem;
+        height: auto;
+        max-height: 50rem;
+    }
+
+    .result {
+        display: flex;
+        padding: 1rem;
+
+        &__poster {
+            width: 7rem;
+            border-radius: 1rem;
+            margin-right: 3rem;
+        }
+
+        &__info {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+
+        &__names {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__name {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        &__alternativeNameAndYear {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: gray;
+        }
+
+        &__rating {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .icon {
+            width: 2rem;
+            height: 2rem;
+            margin-right: 0.5rem;
+        }
+
+        .kp,
+        .imdb {
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            color: gray;
+        }
+
+        .kp-green,
+        .imdb-green {
+            color: green;
+        }
+
+        .kp-red,
+        .imdb-red {
+            color: red;
+        }
+    }
+
+    .result:hover {
+        background-color: gainsboro;
+        cursor: pointer;
     }
 }
